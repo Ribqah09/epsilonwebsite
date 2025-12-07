@@ -134,43 +134,6 @@
   transform: translateY(3px);
 }
 
-/* Carousel Dots */
-.portfolio-dots {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 20;
-  display: flex;
-  gap: 12px;
-  padding: 10px 16px;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 30px;
-  backdrop-filter: blur(8px);
-}
-
-.portfolio-dots .dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  padding: 0;
-}
-
-.portfolio-dots .dot:hover {
-  border-color: rgba(255, 255, 255, 0.8);
-  transform: scale(1.1);
-}
-
-.portfolio-dots .dot.active {
-  background: #ffffff;
-  border-color: #ffffff;
-  transform: scale(1.2);
-}
-
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -393,6 +356,153 @@
   content: '▸';
   color: #60a5fa;
   font-weight: 700;
+}
+
+/* Solutions Accordion */
+.solutions-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.accordion-item {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.accordion-item:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.accordion-item.static {
+  cursor: default;
+}
+
+.accordion-item.static:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.accordion-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.accordion-header.static {
+  cursor: default;
+  padding: 14px 18px;
+}
+
+.accordion-header span {
+  flex: 1;
+}
+
+.accordion-icon {
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  opacity: 0.7;
+}
+
+.accordion-item.active .accordion-icon {
+  transform: rotate(180deg);
+}
+
+.accordion-item.active .accordion-header {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  padding: 0 18px;
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 800px;
+  padding: 0 18px 18px;
+}
+
+.accordion-content p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.accordion-content p:last-child {
+  margin-bottom: 0;
+}
+
+.accordion-content ul,
+.accordion-content ol {
+  margin: 0 0 14px 0;
+  padding-left: 20px;
+}
+
+.accordion-content li {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
+.metrics-list {
+  list-style: disc;
+}
+
+.goals-list {
+  list-style: none;
+  padding-left: 0 !important;
+}
+
+.goals-list li::before {
+  content: '☐';
+  margin-right: 8px;
+  color: #60a5fa;
+}
+
+.features-list {
+  list-style: decimal;
+}
+
+.status-list {
+  list-style: none;
+  padding-left: 0 !important;
+}
+
+.status-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-green {
+  color: #22c55e;
+  font-size: 16px;
+}
+
+.status-orange {
+  color: #f97316;
+  font-size: 16px;
+}
+
+.status-red {
+  color: #ef4444;
+  font-size: 16px;
 }
 
 /* Projects Section */
@@ -637,17 +747,6 @@
     font-size: 13px;
   }
   
-  .portfolio-dots {
-    bottom: 20px;
-    gap: 10px;
-    padding: 8px 14px;
-  }
-  
-  .portfolio-dots .dot {
-    width: 10px;
-    height: 10px;
-  }
-  
   .portfolio-main {
     padding: 40px 0;
   }
@@ -756,8 +855,7 @@
   .feature-item,
   .solutions-list li,
   .project-list li,
-  .contact-item,
-  .portfolio-dots .dot {
+  .contact-item {
     transition: none;
   }
 }

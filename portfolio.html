@@ -183,14 +183,106 @@
           <!-- Our Core Solutions -->
           <div class="content-card solutions-card">
             <h2 class="content-title">OUR CORE SOLUTIONS</h2>
-            <ul class="solutions-list">
-              <li>INDUSTRIAL & COMMERCIAL ENERGY MONITORING SYSTEMS</li>
-              <li>MOTOR HEALTH MONITORING & PREDICTIVE MAINTENANCE</li>
-              <li>ENVIRONMENTAL MONITORING SYSTEMS</li>
-              <li>CUSTOM INDUSTRIAL AUTOMATION & SYSTEM INTEGRATION</li>
-              <li>LEGACY SYSTEM REBUILDS (SCADA, PLCs)</li>
-              <li>R&D FOR CUSTOM ELECTRONICS</li>
-            </ul>
+            <div class="solutions-accordion">
+              
+              <!-- Industrial Energy Management System -->
+              <div class="accordion-item">
+                <button class="accordion-header">
+                  <span>Industrial Energy Management System</span>
+                  <svg class="accordion-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                <div class="accordion-content">
+                  <p>Our Industrial Energy Monitoring System is engineered to give plant managers deep visibility into real-time energy consumption patterns across all major machinery and loads. By integrating with CTs and energy analyzers, this system captures key metrics such as:</p>
+                  <ul class="metrics-list">
+                    <li>Voltage</li>
+                    <li>Current</li>
+                    <li>Frequency</li>
+                    <li>Power factor</li>
+                    <li>Energy units</li>
+                    <li>Load profile</li>
+                  </ul>
+                  <p>It provides an actionable dashboard to help reduce wastage, identify abnormal consumption, and optimize electrical efficiency across operations.</p>
+                </div>
+              </div>
+
+              <!-- Energy Monitoring for Commercial & Domestic -->
+              <div class="accordion-item">
+                <button class="accordion-header">
+                  <span>Energy Monitoring + Automation for Commercial & Domestic</span>
+                  <svg class="accordion-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                <div class="accordion-content">
+                  <p>Epsilon Smart Solution delivers scalable, user-friendly energy monitoring and automation solutions tailored for commercial buildings, offices and homes. Our system tracks and logs real-time energy usage and allows automated control of lighting, HVAC, and heavy appliances.</p>
+                  <p><strong>The goal:</strong></p>
+                  <ul class="goals-list">
+                    <li>Reduce energy bills</li>
+                    <li>Encourage responsible usage</li>
+                    <li>Support energy-saving strategies through intelligent automation and historical analytics</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Motor Monitoring System -->
+              <div class="accordion-item">
+                <button class="accordion-header">
+                  <span>Motor Monitoring System</span>
+                  <svg class="accordion-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                <div class="accordion-content">
+                  <p>The Motor Monitoring System exemplifies the shift toward intelligent predictive maintenance. It tracks three core health indicators:</p>
+                  <ul class="metrics-list">
+                    <li>Current (via CT sensors)</li>
+                    <li>Temperature (via temperature sensors)</li>
+                    <li>Vibration (via industrial-grade vibration sensors)</li>
+                  </ul>
+                  <p>These parameters are evaluated in real-time and visualized through an intuitive dashboard featuring:</p>
+                  <ul class="status-list">
+                    <li><span class="status-green">●</span> Green (Normal)</li>
+                    <li><span class="status-orange">●</span> Orange (Warning)</li>
+                    <li><span class="status-red">●</span> Red (Critical)</li>
+                  </ul>
+                  <p>In addition to condition monitoring, the system integrates an energy meter that provides:</p>
+                  <ol class="features-list">
+                    <li>Current, Voltage, Frequency, and Power Factor readings</li>
+                    <li>Motor-specific energy consumption analysis</li>
+                    <li>Recommendations for improving power efficiency</li>
+                  </ol>
+                  <p>This solution enables both predictive maintenance (to foresee and prevent failures) and preventive maintenance (to schedule servicing at optimal times), ensuring maximum uptime, reduced maintenance costs, and increased motor life.</p>
+                </div>
+              </div>
+
+              <!-- Other Solutions (non-expandable) -->
+              <div class="accordion-item static">
+                <div class="accordion-header static">
+                  <span>Environmental Monitoring Systems</span>
+                </div>
+              </div>
+              
+              <div class="accordion-item static">
+                <div class="accordion-header static">
+                  <span>Custom Industrial Automation & System Integration</span>
+                </div>
+              </div>
+              
+              <div class="accordion-item static">
+                <div class="accordion-header static">
+                  <span>Legacy System Rebuilds (SCADA, PLCs)</span>
+                </div>
+              </div>
+              
+              <div class="accordion-item static">
+                <div class="accordion-header static">
+                  <span>R&D for Custom Electronics</span>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
@@ -349,6 +441,26 @@
         if (e.key === 'Escape') {
           dropdowns.forEach(d => d.classList.remove('active'));
         }
+      });
+
+      // Accordion functionality
+      const accordionHeaders = document.querySelectorAll('.accordion-header:not(.static)');
+      
+      accordionHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+          const item = this.parentElement;
+          const isActive = item.classList.contains('active');
+          
+          // Close all other accordion items
+          document.querySelectorAll('.accordion-item').forEach(i => {
+            i.classList.remove('active');
+          });
+          
+          // Toggle current item
+          if (!isActive) {
+            item.classList.add('active');
+          }
+        });
       });
     });
   </script>
