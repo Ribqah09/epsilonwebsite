@@ -986,18 +986,18 @@ button {
 }
 
 .services-tagline {
-  font-size: 13px;
+  font-size: 18px;
   color: #475569;
   margin: 0;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 /* See All Services Link */
 .see-all-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 13px;
+  gap: 8px;
+  font-size: 16px;
   font-weight: 600;
   color: #6b7280;
   text-decoration: none;
@@ -1013,7 +1013,7 @@ button {
 /* Link Arrow */
 .see-all-link .link-arrow {
   display: inline-block;
-  font-size: 13px;
+  font-size: 16px;
   transform: rotate(-35deg);
   transition: transform 0.3s ease, color 0.3s ease;
 }
@@ -1329,11 +1329,11 @@ button {
   }
   
   .services-tagline {
-    font-size: 14px;
+    font-size: 16px;
   }
   
   .see-all-link {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .carousel-dots {
@@ -1434,11 +1434,11 @@ button {
   }
   
   .services-tagline {
-    font-size: 13px;
+    font-size: 15px;
   }
   
   .see-all-link {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 
