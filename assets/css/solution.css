@@ -23,6 +23,15 @@
   color: #ffffff;
 }
 
+/* Dropdown content links should be black for visibility on white background */
+.main-nav--solid .nav-dropdown-content a {
+  color: #111827;
+}
+
+.main-nav--solid .nav-dropdown-content a:hover {
+  color: #0b3b8b;
+}
+
 /* ===== HERO CAROUSEL ===== */
 .solution-hero {
   position: relative;
