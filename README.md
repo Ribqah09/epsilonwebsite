@@ -1,4 +1,4 @@
-# Epsilon Systems Website - Local Development
+# Epsilon Smart Solution Website - Local Development
 
 ## 🚀 Quick Start Guide
 

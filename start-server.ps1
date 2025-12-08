@@ -2,7 +2,7 @@
 # Run this script to start the local server
 
 Write-Host "========================================" -ForegroundColor Cyan
-Write-Host "  Epsilon Systems - Local Server" -ForegroundColor Cyan
+Write-Host "  Epsilon Smart Solution - Local Server" -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
 
