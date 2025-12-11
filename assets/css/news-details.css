@@ -1,11 +1,16 @@
 /* ===== NEWS DETAILS PAGE ===== */
 
+/* Override body background for news details page */
+body {
+  background: #ffffff !important;
+}
+
 /* News Header Image - Uses hero-section carousel style */
 /* The hero-section and image-carousel styles are inherited from styles.css */
 
 /* News Article */
 .news-article {
-  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%) !important;
   padding: 60px 0 80px;
   min-height: 60vh;
 }
