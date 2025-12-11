@@ -127,8 +127,20 @@
     <div class="carousel-dots" role="tablist" aria-label="Carousel navigation"></div>
   </section>
 
+  <!-- ABOUT SECTION -->
+  <section class="about-section reveal" data-anim="fade-up" id="about" aria-label="About Us">
+    <div class="container">
+      <div class="about-content">
+        <h2 class="about-heading">About Epsilon Smart Solution</h2>
+        <p class="about-text">
+          Epsilon Smart Solution is the evolution of Printed Circuits – Pakistan's first local manufacturer of double-sided PCBs, established in the late 1990s. Today, Epsilon Smart Solution is a modern technology company providing smart industrial and commercial solutions in automation, energy monitoring, and predictive maintenance. We serve factories, pharma labs, energy plants, and defense units across Pakistan.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- SERVICES SECTION -->
-  <section class="services-section" id="services" aria-label="Services">
+  <section class="services-section reveal" data-anim="fade-up" id="services" aria-label="Services">
     <div class="services-container">
       <div class="services-grid services-grid--5">
         <!-- Service Card 1: Energy Monitoring -->
@@ -218,7 +230,7 @@
   </section>
 
   <!-- NEWS SECTION -->
-  <section class="news-section" id="news" aria-label="News">
+  <section class="news-section reveal" data-anim="fade-up" id="news" aria-label="News">
     <div class="container">
       <h2 class="news-heading">Epsilon's News</h2>
       
@@ -311,7 +323,7 @@
   </section>
 
   <!-- CLIENTS SECTION -->
-  <section class="clients-section" aria-label="Our Clients">
+  <section class="clients-section reveal" data-anim="fade-up" aria-label="Our Clients">
     <div class="clients-container">
       <p class="clients-heading">Our esteemed clientele includes:</p>
       
@@ -463,8 +475,32 @@
     </div>
   </section>
 
+  <!-- STATS SECTION -->
+  <section class="section reveal" data-anim="fade-up">
+    <div class="container">
+      <div class="stats reveal in-view" data-anim="fade-up" data-stagger=".06s">
+        <div class="stat">
+          <h2 data-count-to="25" data-count-duration="1200">0</h2>
+          <p>Years of Expertise</p>
+        </div>
+        <div class="stat">
+          <h2 data-count-to="100" data-count-duration="1200">0</h2>
+          <p>Industrial Projects</p>
+        </div>
+        <div class="stat">
+          <h2 data-count-to="20" data-count-duration="1200">0</h2>
+          <p>Defense & Govt Partners</p>
+        </div>
+        <div class="stat">
+          <h2 data-count-to="4" data-count-duration="1200">0</h2>
+          <p>Core Focus Areas</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- FOOTER -->
-  <footer class="site-footer">
+  <footer class="site-footer reveal" data-anim="fade-up">
     <div class="container">
       <div class="footer-content">
         <p>&copy; <span id="year"></span> Epsilon Smart Solution. All rights reserved.</p>
@@ -515,6 +551,76 @@
           dropdowns.forEach(d => d.classList.remove('active'));
         }
       });
+    });
+
+    // Stats Section Counter Animation
+    document.addEventListener('DOMContentLoaded', function() {
+      const statsSection = document.querySelector('.stats');
+      
+      if (statsSection) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+              entry.target.classList.add('counted');
+              entry.target.classList.add('in-view');
+              
+              // Animate each counter
+              const counters = entry.target.querySelectorAll('h2[data-count-to]');
+              counters.forEach((counter, index) => {
+                const target = parseInt(counter.getAttribute('data-count-to'));
+                const duration = parseInt(counter.getAttribute('data-count-duration')) || 1200;
+                const stagger = parseFloat(entry.target.getAttribute('data-stagger')) || 0.06;
+                const delay = index * (stagger * 1000);
+                
+                setTimeout(() => {
+                  animateCounter(counter, target, duration);
+                }, delay);
+              });
+            }
+          });
+        }, {
+          threshold: 0.3,
+          rootMargin: '0px 0px -50px 0px'
+        });
+        
+        observer.observe(statsSection);
+      }
+    });
+
+    function animateCounter(element, target, duration) {
+      let start = 0;
+      const increment = target / (duration / 16); // 60fps
+      const timer = setInterval(() => {
+        start += increment;
+        if (start >= target) {
+          element.textContent = target;
+          clearInterval(timer);
+        } else {
+          element.textContent = Math.floor(start);
+        }
+      }, 16);
+    }
+
+    // Global Reveal Animation for All Sections
+    document.addEventListener('DOMContentLoaded', function() {
+      const revealElements = document.querySelectorAll('.reveal[data-anim]');
+      
+      if (revealElements.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.classList.contains('in-view')) {
+              entry.target.classList.add('in-view');
+            }
+          });
+        }, {
+          threshold: 0.15,
+          rootMargin: '0px 0px -50px 0px'
+        });
+        
+        revealElements.forEach(element => {
+          observer.observe(element);
+        });
+      }
     });
   </script>
 </body>
