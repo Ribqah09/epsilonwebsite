@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>News Details — Epsilon Smart Solution</title>
+  <link rel="icon" type="image/png" href="./assets/img/logo.png">
+  <meta name="description" content="Read the latest news and updates from Epsilon Smart Solution.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/news-details.css">
+</head>
+<body>
+
+  <!-- TOP UTILITY BAR -->
+  <div class="utility-bar">
+    <div class="container utility-inner">
+      <div class="utility-left">
+        <span class="utility-item">
+          <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          info@epsilonsystems.org
+        </span>
+        <span class="utility-item">
+          <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          Office #105 Sea Breeze Plaza, Shahrah‑e‑Faisal, Karachi
+        </span>
+      </div>
+      <div class="utility-right">
+        <a href="https://www.linkedin.com/company/epsilon-smart-solutions/" target="_blank" rel="noopener" class="utility-item" aria-label="LinkedIn">
+          <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN NAVIGATION -->
+  <header class="main-nav">
+    <div class="container nav-inner">
+      <div class="nav-logo">
+        <a href="index.html">
+          <img src="assets/img/logo.png" alt="Epsilon Smart Solution Logo" class="logo-img" width="60" height="60">
+        </a>
+        <div class="logo-text">
+          <span class="logo-main">Epsilon Smart Solution</span>
+          <span class="logo-sub">Sense · Analyze · Automate · Monitor</span>
+        </div>
+      </div>
+
+      <nav class="nav-menu" aria-label="Main navigation">
+        <a href="index.html#about">About</a>
+        
+        <!-- Services Dropdown -->
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-btn">Services <span class="dropdown-arrow">▼</span></button>
+          <div class="nav-dropdown-content">
+            <a href="index.html#services">Energy Monitoring</a>
+            <a href="index.html#services">Motor Monitoring</a>
+            <a href="index.html#services">Production Monitoring</a>
+            <a href="index.html#services">Predictive Maintenance</a>
+            <a href="index.html#services">Industrial Automation</a>
+          </div>
+        </div>
+        
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="nav-search" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+        </button>
+        <a href="contact.html" class="btn-get-started">GET STARTED <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- NEWS HEADER IMAGE (Carousel Style) -->
+  <section class="hero-section" aria-label="News Hero">
+    <div class="hero-background" aria-hidden="true">
+      <div class="stars"></div>
+      <div class="stars2"></div>
+    </div>
+    <div class="image-carousel" role="region" aria-label="News image">
+      <div class="slide active">
+        <img id="news-hero-image" src="" alt="" loading="eager" width="1920" height="1080">
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS ARTICLE CONTENT -->
+  <article class="news-article">
+    <div class="container">
+      <div class="news-article-content">
+        <span class="news-article-tag">News</span>
+        <h1 class="news-article-title" id="news-title"></h1>
+        
+        <div class="news-article-body" id="news-body">
+          <!-- Content will be dynamically inserted here -->
+        </div>
+        
+        <div class="news-article-footer">
+          <a href="index.html#news" class="btn-back-to-news">← Back to News</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; <span id="year"></span> Epsilon Smart Solution. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- News Data -->
+  <script>
+    const newsData = {
+      'pimec-2025': {
+        title: 'Epsilon Smart Solutions at PIMEC 2025 – Showcasing Innovation, Smart Industry & Naval Technology',
+        image: 'assets/img/pimec-2025.jpg',
+        imageAlt: 'Epsilon Smart Solutions at PIMEC 2025',
+        content: `
+          <p>From 3rd to 6th November 2025, Epsilon Smart Solutions proudly participated in PIMEC 2025, one of Pakistan's leading platforms for industrial, maritime, and defense technology innovation. This year's exhibition brought together top industry professionals, engineering companies, and defense representatives — and Epsilon stood out with its cutting-edge smart systems, AI solutions, and previously deployed naval technology projects.</p>
+          
+          <p>Our presence at PIMEC 2025 highlighted our commitment to transforming industries and supporting national technological advancements.</p>
+          
+          <h2>1. Digital Twin Technology – Transforming Industrial Planning</h2>
+          
+          <p>At PIMEC, we presented our powerful Digital Twin Solution, enabling industries to visualize, simulate, and optimize operations in real-time.</p>
+          
+          <p><strong>Highlights:</strong></p>
+          <ul>
+            <li>Real-time virtual models of machinery and plants</li>
+            <li>Performance simulations for improved efficiency</li>
+            <li>Predictive analytics for informed decision-making</li>
+          </ul>
+          
+          <p>Visitors appreciated how the Digital Twin can reduce downtime and enhance operational intelligence.</p>
+          
+          <h2>2. Energy Monitoring System – Smart Power Optimization</h2>
+          
+          <p>Epsilon's Energy Monitoring System (EMS) gained strong attention for its ability to track and reduce energy consumption.</p>
+          
+          <p><strong>Key Showcased Features:</strong></p>
+          <ul>
+            <li>Live machine-wise energy usage</li>
+            <li>Zone-wise dashboards and analytics</li>
+            <li>AI-based energy-saving suggestions</li>
+          </ul>
+          
+          <p>Attendees from manufacturing and commercial sectors recognized the system's potential to reduce energy costs significantly.</p>
+          
+          <h2>3. Predictive Maintenance – Preventing Failures Before They Happen</h2>
+          
+          <p>Our Predictive Maintenance System demonstrated how industries can avoid costly unplanned breakdowns.</p>
+          
+          <p><strong>System Capabilities:</strong></p>
+          <ul>
+            <li>Real-time vibration & temperature monitoring</li>
+            <li>Early fault warnings</li>
+            <li>Optimized maintenance scheduling</li>
+          </ul>
+          
+          <p>Industry professionals praised its reliability and long-term cost-saving impact.</p>
+          
+          <h2>4. AI Inventory Management System – Intelligent Stock Optimization</h2>
+          
+          <p>Epsilon showcased its AI-driven inventory system, designed for both industrial and commercial sectors.</p>
+          
+          <p><strong>Main Features:</strong></p>
+          <ul>
+            <li>Automatic stock level tracking</li>
+            <li>AI-powered demand forecasting</li>
+            <li>Smart reorder notifications</li>
+          </ul>
+          
+          <p>Visitors appreciated its accuracy, speed, and ability to prevent overstock or stockouts.</p>
+          
+          <h2>5. Production Monitoring System – Real-Time Factory Visibility</h2>
+          
+          <p>Our Production Monitoring System (PMS) displayed how factories can improve productivity through live data.</p>
+          
+          <p><strong>Highlighted Features:</strong></p>
+          <ul>
+            <li>Real-time production dashboards</li>
+            <li>Shift-wise performance tracking</li>
+            <li>Downtime & rejection analytics</li>
+          </ul>
+          
+          <p>This system attracted strong interest from textile, FMCG, and manufacturing companies looking for data-driven control.</p>
+          
+          <h2>Showcasing Past Projects With Pakistan Naval Forces</h2>
+          
+          <p>One of the most exciting aspects of our PIMEC participation was presenting our previously completed projects for the Pakistan Naval Forces.</p>
+          
+          <p>We highlighted key naval-focused solutions such as:</p>
+          
+          <ul>
+            <li><strong>✔ Smart Energy Management for Naval Facilities</strong>
+              <ul>
+                <li>Reduced energy waste</li>
+                <li>Improved monitoring across critical zones</li>
+              </ul>
+            </li>
+            <li><strong>✔ Automation Systems for Operational Efficiency</strong>
+              <ul>
+                <li>Customized dashboards</li>
+                <li>System integration for critical workflows</li>
+              </ul>
+            </li>
+            <li><strong>✔ IoT Monitoring Solutions</strong>
+              <ul>
+                <li>Real-time data acquisition for naval infrastructure</li>
+                <li>Enhanced reliability and safety</li>
+              </ul>
+            </li>
+          </ul>
+          
+          <p>These projects demonstrated Epsilon's capabilities in delivering high-security, mission-critical, and defense-grade technology solutions.</p>
+          
+          <h2>Why Epsilon Stood Out at PIMEC 2025</h2>
+          
+          <p>Epsilon's booth stood out for several reasons:</p>
+          
+          <ul>
+            <li>Live demos of all systems</li>
+            <li>Proven industrial and defense sector experience</li>
+            <li>Locally developed, cost-effective solutions</li>
+            <li>Strong interest from manufacturers & defense delegates</li>
+          </ul>
+          
+          <p>Visitors appreciated both our forward-looking Industry 4.0 solutions and our practical, already-deployed naval projects.</p>
+          
+          <h2>Conclusion: Epsilon Smart Solutions Continues to Lead Industrial & Defense Innovation</h2>
+          
+          <p>Our participation in PIMEC 2025 reinforced Epsilon Smart Solutions' position as a trusted leader in automation, AI systems, IoT solutions, and energy optimization. From smart industries to defense innovation, we are committed to shaping Pakistan's technological future.</p>
+          
+          <p>With successful exhibitions like PIMEC and a growing portfolio of advanced projects, Epsilon remains dedicated to delivering intelligent, secure, and scalable solutions for every sector.</p>
+        `
+      },
+      'ieeep-expo': {
+        title: 'Epsilon Smart Solutions at IEEEP EXPO – Showcasing the Future of Smart Industry',
+        image: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=1920&q=80',
+        imageAlt: 'Epsilon Smart Solutions at IEEEP EXPO',
+        content: `
+          <p>Epsilon Smart Solutions participated in the IEEEP EXPO, presenting advanced Industry 4.0 technologies designed to improve efficiency, reduce cost, and digitalize industrial operations. Our solutions attracted engineers, manufacturers, and decision-makers looking for reliable, local, and intelligent automation systems.</p>
+          
+          <div class="news-images-gallery">
+            <img src="assets/img/ieeep1.jpg" alt="Epsilon Smart Solutions at IEEEP EXPO" loading="lazy">
+            <img src="assets/img/ieeep2.jpg" alt="Epsilon Smart Solutions at IEEEP EXPO" loading="lazy">
+          </div>
+          
+          <h2>1. Digital Twin Technology – Real-Time Industrial Simulation</h2>
+          
+          <p>Our Digital Twin system was a major highlight at the Expo.</p>
+          
+          <p><strong>Key Points:</strong></p>
+          <ul>
+            <li>Live virtual model of machines and production lines</li>
+            <li>Real-time monitoring & predictive analytics</li>
+            <li>Simulation for performance optimization</li>
+          </ul>
+          
+          <h2>2. Energy Monitoring System – Reduce Energy Cost Smartly</h2>
+          
+          <p>Epsilon's Energy Monitoring System (EMS) helps industries track and optimize power usage.</p>
+          
+          <p><strong>Key Points:</strong></p>
+          <ul>
+            <li>Machine-wise and area-wise consumption</li>
+            <li>AI-based energy recommendations</li>
+            <li>Alerts for abnormal loads</li>
+          </ul>
+          
+          <h2>3. Predictive Maintenance Solution – Prevent Machine Failures</h2>
+          
+          <p>Our Predictive Maintenance solution uses IoT sensors to detect issues before breakdowns happen.</p>
+          
+          <p><strong>Key Points:</strong></p>
+          <ul>
+            <li>Vibration, temperature & current monitoring</li>
+            <li>Early fault detection</li>
+            <li>Reduced downtime and repair cost</li>
+          </ul>
+          
+          <h2>4. AI Inventory Management System – Smart Stock Control</h2>
+          
+          <p>The Expo audience appreciated our AI-powered inventory system.</p>
+          
+          <p><strong>Key Points:</strong></p>
+          <ul>
+            <li>Automatic stock tracking</li>
+            <li>AI-based demand forecasting</li>
+            <li>Smart reorder suggestions</li>
+          </ul>
+          
+          <h2>5. Production Monitoring System – Live Factory Performance</h2>
+          
+          <p>Our Production Monitoring System provides real-time factory visibility.</p>
+          
+          <p><strong>Key Points:</strong></p>
+          <ul>
+            <li>Live production dashboards</li>
+            <li>Downtime and quality analysis</li>
+            <li>Operator & shift performance tracking</li>
+          </ul>
+          
+          <h2>Why Epsilon Stood Out at IEEEP EXPO</h2>
+          
+          <p><strong>Highlights:</strong></p>
+          <ul>
+            <li>Fully working live demos</li>
+            <li>Cost-effective & locally developed systems</li>
+            <li>Strong interest from manufacturers and engineers</li>
+          </ul>
+          
+          <h2>Epsilon Smart Solutions – Driving Industrial Digital Transformation</h2>
+          
+          <p>Our presence at the IEEEP EXPO strengthened our position as a leading provider of smart industrial solutions in Pakistan. We continue to help businesses improve efficiency, reduce energy cost, and adopt AI-driven automation.</p>
+        `
+      }
+    };
+  </script>
+
+  <!-- Dropdown Menu Script -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropdowns = document.querySelectorAll('.nav-dropdown');
+      
+      dropdowns.forEach(dropdown => {
+        const btn = dropdown.querySelector('.nav-dropdown-btn');
+        
+        // Toggle dropdown on click
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          // Close other dropdowns
+          dropdowns.forEach(d => {
+            if (d !== dropdown) {
+              d.classList.remove('active');
+            }
+          });
+          
+          // Toggle current dropdown
+          dropdown.classList.toggle('active');
+        });
+      });
+      
+      // Close dropdowns when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.nav-dropdown')) {
+          dropdowns.forEach(d => d.classList.remove('active'));
+        }
+      });
+      
+      // Close dropdowns on escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          dropdowns.forEach(d => d.classList.remove('active'));
+        }
+      });
+
+      // Dynamic News Content Loader
+      function loadNewsArticle() {
+        // Get the news ID from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const newsId = urlParams.get('id') || 'pimec-2025'; // Default to PIMEC if no ID
+        
+        // Get news data
+        const news = newsData[newsId];
+        
+        if (news) {
+          // Update page title
+          document.title = news.title + ' — Epsilon Smart Solution';
+          
+          // Update meta description
+          const metaDesc = document.querySelector('meta[name="description"]');
+          if (metaDesc) {
+            metaDesc.content = news.title;
+          }
+          
+          // Update hero image
+          const heroImage = document.getElementById('news-hero-image');
+          if (heroImage) {
+            heroImage.src = news.image;
+            heroImage.alt = news.imageAlt;
+          }
+          
+          // Update article title
+          const titleElement = document.getElementById('news-title');
+          if (titleElement) {
+            titleElement.textContent = news.title;
+          }
+          
+          // Update article body
+          const bodyElement = document.getElementById('news-body');
+          if (bodyElement) {
+            bodyElement.innerHTML = news.content;
+          }
+        } else {
+          // If news not found, redirect to homepage
+          window.location.href = 'index.html#news';
+        }
+      }
+      
+      // Load the news article
+      loadNewsArticle();
+    });
+  </script>
+</body>
+</html>
