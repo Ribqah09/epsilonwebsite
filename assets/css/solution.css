@@ -372,6 +372,7 @@
   border-radius: 20px;
   padding: 40px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  overflow: visible;
 }
 
 .detail-close {
@@ -399,16 +400,23 @@
 
 .detail-image {
   width: 100%;
-  height: 250px;
-  border-radius: 12px;
-  overflow: hidden;
   margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 20px;
+  overflow: visible;
 }
 
 .detail-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px;
 }
 
 .detail-info {
@@ -628,7 +636,11 @@
   }
   
   .detail-image {
-    height: 180px;
+    padding: 15px;
+  }
+  
+  .detail-image img {
+    max-width: 100%;
   }
   
   .detail-title {
