@@ -765,6 +765,35 @@ button {
   transform: translateX(3px);
 }
 
+/* ===== ABOUT SECTION ===== */
+.about-section {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  padding: 60px 0;
+  position: relative;
+}
+
+.about-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-heading {
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 24px;
+  letter-spacing: -0.5px;
+}
+
+.about-text {
+  font-size: clamp(15px, 2vw, 17px);
+  color: var(--text-gray);
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 /* ===== SERVICES SECTION ===== */
 .services-section {
   background: #f8fafc;
@@ -1299,6 +1328,20 @@ button {
     font-size: 10px;
   }
 
+  .about-section {
+    padding: 50px 0;
+  }
+
+  .about-heading {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .about-text {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
   .services-section {
     padding: 0 0 40px 0;
   }
@@ -1379,6 +1422,20 @@ button {
   
   .hero-section {
     margin-top: 0;
+  }
+  
+  .about-section {
+    padding: 40px 0;
+  }
+
+  .about-heading {
+    font-size: 24px;
+    margin-bottom: 18px;
+  }
+
+  .about-text {
+    font-size: 14px;
+    line-height: 1.7;
   }
   
   .container {
@@ -1481,7 +1538,18 @@ button {
 .news-section {
   background: linear-gradient(180deg, #e8eef5 0%, #dce4ed 50%, #e2e8f0 100%);
   padding: 40px 0 80px;
+  margin-bottom: 60px;
   position: relative;
+}
+
+.news-section::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(180deg, #e8eef5 0%, #f8fafc 100%);
 }
 
 .news-section::before {
@@ -1799,6 +1867,138 @@ button {
   .client-name {
     font-size: 10px;
   }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 50px 0;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .stat {
+    padding: 28px 18px;
+  }
+
+  .stat h2 {
+    font-size: clamp(28px, 4vw, 40px);
+  }
+
+  .stat p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 40px 0;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .stat {
+    padding: 24px 16px;
+  }
+
+  .stat h2 {
+    font-size: 32px;
+  }
+
+  .stat p {
+    font-size: 13px;
+  }
+}
+
+/* ===== STATS SECTION ===== */
+.section {
+  background: linear-gradient(180deg, #e8eef5 0%, #dce4ed 50%, #f8fafc 100%);
+  padding: 60px 0;
+  margin-top: 0;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.stat {
+  text-align: center;
+  padding: 30px 20px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.stat h2 {
+  font-size: clamp(36px, 5vw, 48px);
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 12px 0;
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+.stat p {
+  font-size: clamp(14px, 1.5vw, 16px);
+  color: var(--text-gray);
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* ===== REVEAL ANIMATION (Global) ===== */
+/* Reveal classes kept for potential future use, but no invisible effect applied */
+
+/* Stats Animation */
+.stats.reveal {
+  opacity: 0;
+}
+
+.stats.reveal.in-view {
+  opacity: 1;
+}
+
+.stats[data-anim="fade-up"] .stat {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.stats[data-anim="fade-up"].in-view .stat {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stats[data-anim="fade-up"] .stat:nth-child(1) {
+  transition-delay: 0s;
+}
+
+.stats[data-anim="fade-up"] .stat:nth-child(2) {
+  transition-delay: 0.06s;
+}
+
+.stats[data-anim="fade-up"] .stat:nth-child(3) {
+  transition-delay: 0.12s;
+}
+
+.stats[data-anim="fade-up"] .stat:nth-child(4) {
+  transition-delay: 0.18s;
 }
 
 /* ===== SITE FOOTER ===== */
