@@ -1083,6 +1083,10 @@ button {
     --spacing-3xl: 56px;
   }
 
+  .container {
+    padding: 0 24px;
+  }
+
   .main-nav {
     padding: 14px 0;
   }
@@ -1136,6 +1140,14 @@ button {
     font-size: clamp(18px, 3vw, 28px);
   }
 
+  .about-section {
+    padding: 55px 0;
+  }
+
+  .about-content {
+    padding: 0 20px;
+  }
+
   .services-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 0;
@@ -1172,6 +1184,15 @@ button {
   .services-grid--5 .service-card:nth-last-child(-n+2) {
     border-bottom: none;
   }
+
+  .news-section {
+    padding: 40px 0 70px;
+  }
+
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
 }
 
 /* Mobile */
@@ -1182,6 +1203,10 @@ button {
     --spacing-xl: 24px;
     --spacing-2xl: 32px;
     --spacing-3xl: 48px;
+  }
+
+  .container {
+    padding: 0 20px;
   }
 
   .utility-inner {
@@ -1426,6 +1451,10 @@ button {
   
   .about-section {
     padding: 40px 0;
+  }
+
+  .about-content {
+    padding: 0 16px;
   }
 
   .about-heading {
@@ -1871,51 +1900,6 @@ button {
   }
 }
 
-@media (max-width: 768px) {
-  .section {
-    padding: 50px 0;
-  }
-
-  .stats {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-
-  .stat {
-    padding: 28px 18px;
-  }
-
-  .stat h2 {
-    font-size: clamp(28px, 4vw, 40px);
-  }
-
-  .stat p {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  .section {
-    padding: 40px 0;
-  }
-
-  .stats {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
-  .stat {
-    padding: 24px 16px;
-  }
-
-  .stat h2 {
-    font-size: 32px;
-  }
-
-  .stat p {
-    font-size: 13px;
-  }
-}
 
 /* ===== STATS SECTION ===== */
 .section {
@@ -1930,6 +1914,7 @@ button {
   gap: 30px;
   max-width: 1000px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .stat {
@@ -1962,6 +1947,101 @@ button {
   margin: 0;
   font-weight: 500;
   line-height: 1.5;
+}
+
+/* Stats Section Responsive Styles */
+@media (max-width: 1024px) {
+  .section {
+    padding: 55px 0;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 800px;
+    padding: 0 24px;
+  }
+
+  .stat {
+    padding: 28px 20px;
+  }
+
+  .stat h2 {
+    font-size: clamp(32px, 4.5vw, 44px);
+  }
+
+  .stat p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 50px 0;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .stat {
+    padding: 26px 18px;
+  }
+
+  .stat h2 {
+    font-size: clamp(28px, 4vw, 40px);
+  }
+
+  .stat p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 40px 0;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 0 16px;
+  }
+
+  .stat {
+    padding: 24px 14px;
+  }
+
+  .stat h2 {
+    font-size: clamp(24px, 6vw, 32px);
+  }
+
+  .stat p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 360px) {
+  .stats {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 0 12px;
+  }
+
+  .stat {
+    padding: 22px 16px;
+  }
+
+  .stat h2 {
+    font-size: 28px;
+  }
+
+  .stat p {
+    font-size: 12px;
+  }
 }
 
 /* ===== REVEAL ANIMATION (Global) ===== */
